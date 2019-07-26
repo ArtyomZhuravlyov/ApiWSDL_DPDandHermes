@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="https://api.hermes-dpd.ru/WS/" elementFormDefault="qualified" targetNamespace="https://api.hermes-dpd.ru/WS/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://test-api.hermes-dpd.ru/WS/WebService.svc?xsd=xsd2" />
+  <xs:import schemaLocation="https://test-api.hermes-dpd.ru/WS/WebService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/B2C.API.DTO" />
+  <xs:import schemaLocation="https://test-api.hermes-dpd.ru/WS/WebService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:element name="CreatePreadvice">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="preadvices" nillable="true" type="ArrayOfPreadvice" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreatePreadviceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/B2C.API.DTO" minOccurs="0" name="CreatePreadviceResult" nillable="true" type="q1:ArrayOfPreadviceResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdatePreadvice">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="preadvices" nillable="true" type="ArrayOfPreadvice" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdatePreadviceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/B2C.API.DTO" minOccurs="0" name="UpdatePreadviceResult" nillable="true" type="q2:ArrayOfPreadviceResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeletePreadvice">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="parcelBarcodes" nillable="true" type="q3:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeletePreadviceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/B2C.API.DTO" minOccurs="0" name="DeletePreadviceResult" nillable="true" type="q4:ArrayOfPreadviceResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPreadvices">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="businessUnitCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPreadvicesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetPreadvicesResult" nillable="true" type="ArrayOfPreadvice" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendPreadvicesToDelivery">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="parcelBarcodes" nillable="true" type="q5:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendPreadvicesToDeliveryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/B2C.API.DTO" minOccurs="0" name="SendPreadvicesToDeliveryResult" nillable="true" type="q6:ArrayOfPreadviceResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendAllPreadvicesToDelivery">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="businessUnitCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendAllPreadvicesToDeliveryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/B2C.API.DTO" minOccurs="0" name="SendAllPreadvicesToDeliveryResult" nillable="true" type="q7:ArrayOfPreadviceResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetParcelShops">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="businessUnitCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetParcelShopsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/B2C.API.DTO" minOccurs="0" name="GetParcelShopsResult" nillable="true" type="q8:ArrayOfParcelShop" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetStatusesByBusinessUnit">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="businessUnitCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="dateFrom" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="dateTo" nillable="true" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetStatusesByBusinessUnitResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/B2C.API.DTO" minOccurs="0" name="GetStatusesByBusinessUnitResult" nillable="true" type="q9:StatusDateRangeResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetStatusesByParcelBarcodes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="parcelBarCodes" nillable="true" type="q10:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetStatusesByParcelBarcodesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/B2C.API.DTO" minOccurs="0" name="GetStatusesByParcelBarcodesResult" nillable="true" type="q11:ArrayOfStatus" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetReturnInfoByBusinessUnit">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="businessUnitCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="dateFrom" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="dateTo" nillable="true" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetReturnInfoByBusinessUnitResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/B2C.API.DTO" minOccurs="0" name="GetReturnInfoByBusinessUnitResult" nillable="true" type="q12:ReturnInfoResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

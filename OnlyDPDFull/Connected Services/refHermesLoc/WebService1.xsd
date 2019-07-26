@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://test-api.hermes-dpd.ru/WS/WebService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="https://test-api.hermes-dpd.ru/WS/WebService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="ArrayOfPreadvice">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Preadvice" nillable="true" type="Preadvice" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPreadvice" nillable="true" type="ArrayOfPreadvice" />
+  <xs:complexType name="Preadvice">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BusinessUnitCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CashOnDeliveryCurrency" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CashOnDeliveryValue" type="xs:double" />
+      <xs:element minOccurs="0" name="ClientOrderNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ClientParcelNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CustomStoragePeriod" type="xs:int" />
+      <xs:element minOccurs="0" name="CustomerAdditionalAddressInfo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CustomerAdditionalPhoneNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CustomerApartmentNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CustomerBuildingNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CustomerCity" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CustomerConstructionNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CustomerCountryCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CustomerEmail" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CustomerFarthersName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CustomerFirstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CustomerFrameNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CustomerLandlinePhoneNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CustomerMobilePhoneNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CustomerNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CustomerRegion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CustomerStreet" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CustomerStreetType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CustomerSubregion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CustomerSurname" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CustomerZipCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DirectDistributionCenterCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DispatchDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ExtraParams" nillable="true" type="ArrayOfExtraParam" />
+      <xs:element minOccurs="0" name="InsuranceCurrency" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InsuranceValue" type="xs:double" />
+      <xs:element minOccurs="0" name="OrderPlacementTimestamp" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ParcelBarcode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ParcelHeight" type="xs:int" />
+      <xs:element minOccurs="0" name="ParcelLength" type="xs:int" />
+      <xs:element minOccurs="0" name="ParcelWeight" type="xs:int" />
+      <xs:element minOccurs="0" name="ParcelWidth" type="xs:int" />
+      <xs:element minOccurs="0" name="ParcelshopCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReturnDistributionCenterCode" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Services" nillable="true" type="q1:ArrayOfstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Preadvice" nillable="true" type="Preadvice" />
+  <xs:complexType name="ArrayOfExtraParam">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ExtraParam" nillable="true" type="ExtraParam" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfExtraParam" nillable="true" type="ArrayOfExtraParam" />
+  <xs:complexType name="ExtraParam">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ExtraParam" nillable="true" type="ExtraParam" />
+  <xs:simpleType name="ServiceType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="DIRECT_DELIVERY">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DIRECT_RETURN">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CUSTOMER_RETURN">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="HOME_DELIVERY">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="HOME_RETURN">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">5</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="HAND_OUT">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">6</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="HAND_OUT_IN_PARCEL_AUTOMATE">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">7</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PARCEL_SHOP_STORAGE">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">8</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PARCEL_AUTOMATE_STORAGE">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">9</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DOOR_DELIVERY">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">10</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ServiceType" nillable="true" type="ServiceType" />
+  <xs:complexType name="ArrayOfServiceType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ServiceType" type="ServiceType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfServiceType" nillable="true" type="ArrayOfServiceType" />
+</xs:schema>

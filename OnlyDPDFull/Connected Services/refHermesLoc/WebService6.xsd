@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/B2C.API.DTO" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/B2C.API.DTO" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://test-api.hermes-dpd.ru/WS/WebService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="https://test-api.hermes-dpd.ru/WS/WebService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/B2C.API" />
+  <xs:import schemaLocation="https://test-api.hermes-dpd.ru/WS/WebService.svc?xsd=xsd2" />
+  <xs:import schemaLocation="https://test-api.hermes-dpd.ru/WS/WebService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="https://test-api.hermes-dpd.ru/WS/WebService.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/System" />
+  <xs:simpleType name="CurrencyCode">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="RUB">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="CurrencyCode" nillable="true" type="tns:CurrencyCode" />
+  <xs:complexType name="ArrayOfPreadviceResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PreadviceResult" nillable="true" type="tns:PreadviceResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPreadviceResult" nillable="true" type="tns:ArrayOfPreadviceResult" />
+  <xs:complexType name="PreadviceResult">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:RequestResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ClientParcelNumber" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ParcelBarcode" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PreadviceResult" nillable="true" type="tns:PreadviceResult" />
+  <xs:complexType name="RequestResult">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/B2C.API" minOccurs="0" name="ErrorCode" type="q1:ErrorCode" />
+      <xs:element minOccurs="0" name="ErrorMessage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OperationResult" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RequestResult" nillable="true" type="tns:RequestResult" />
+  <xs:complexType name="ArrayOfParcelShop">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ParcelShop" nillable="true" type="tns:ParcelShop" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfParcelShop" nillable="true" type="tns:ArrayOfParcelShop" />
+  <xs:complexType name="ParcelShop">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AddressUrl" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="City" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CityCladrCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="District" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ExtraParams" nillable="true" type="ArrayOfExtraParam" />
+      <xs:element minOccurs="0" name="Latitude" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Longitude" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MaxParcelOverallSize" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="MaxParcelValue" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="MaxParcelWeight" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="MetroStation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ParcelShopCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ParcelShopName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PaymentType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RailwayStation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Region" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Schedule" nillable="true" type="tns:ArrayOfSchedule" />
+      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Services" nillable="true" type="q2:ArrayOfstring" />
+      <xs:element minOccurs="0" name="UpdateTimestamp" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ZipCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ParcelShop" nillable="true" type="tns:ParcelShop" />
+  <xs:complexType name="ArrayOfSchedule">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Schedule" type="tns:Schedule" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSchedule" nillable="true" type="tns:ArrayOfSchedule" />
+  <xs:complexType name="Schedule">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="TimeIntervals" nillable="true" type="tns:ArrayOfTimeInterval" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="WeekDay" type="q3:DayOfWeek" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Schedule" nillable="true" type="tns:Schedule" />
+  <xs:complexType name="ArrayOfTimeInterval">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TimeInterval" type="tns:TimeInterval" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTimeInterval" nillable="true" type="tns:ArrayOfTimeInterval" />
+  <xs:complexType name="TimeInterval">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="From" type="tns:DayTime" />
+      <xs:element minOccurs="0" name="To" type="tns:DayTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TimeInterval" nillable="true" type="tns:TimeInterval" />
+  <xs:complexType name="DayTime">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Hours" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="Minutes" type="xs:unsignedByte" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DayTime" nillable="true" type="tns:DayTime" />
+  <xs:simpleType name="PaymentType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Cash" />
+      <xs:enumeration value="Terminal" />
+      <xs:enumeration value="CashAndCard" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="PaymentType" nillable="true" type="tns:PaymentType" />
+  <xs:complexType name="StatusDateRangeResult">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:RequestResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="NextRequestDateFrom" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Statuses" nillable="true" type="tns:ArrayOfStatus" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="StatusDateRangeResult" nillable="true" type="tns:StatusDateRangeResult" />
+  <xs:complexType name="ArrayOfStatus">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Status" nillable="true" type="tns:Status" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfStatus" nillable="true" type="tns:ArrayOfStatus" />
+  <xs:complexType name="Status">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ExtraParams" nillable="true" type="ArrayOfExtraParam" />
+      <xs:element minOccurs="0" name="ParcelBarcode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RefuseReasonName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RefuseReasonSystemName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StatusDeleteTimestamp" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="StatusName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StatusSystemName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StatusTimestamp" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Status" nillable="true" type="tns:Status" />
+  <xs:complexType name="ReturnInfoResult">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:RequestResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="NextRequestDateFrom" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Returns" nillable="true" type="tns:ArrayOfReturnInfo" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ReturnInfoResult" nillable="true" type="tns:ReturnInfoResult" />
+  <xs:complexType name="ArrayOfReturnInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ReturnInfo" nillable="true" type="tns:ReturnInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfReturnInfo" nillable="true" type="tns:ArrayOfReturnInfo" />
+  <xs:complexType name="ReturnInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ClaimBarcode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ExtraParams" nillable="true" type="ArrayOfExtraParam" />
+      <xs:element minOccurs="0" name="InsuranceValue" type="xs:double" />
+      <xs:element minOccurs="0" name="ParcelBarcode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ParcelshopCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReturnTimestamp" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="WaybillNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Weight" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ReturnInfo" nillable="true" type="tns:ReturnInfo" />
+</xs:schema>

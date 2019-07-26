@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="https://api.hermes-dpd.ru/WS/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="https://api.hermes-dpd.ru/WS/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="BasicHttpBinding_IWebService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false" />
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Lax />
+              </wsp:Policy>
+            </sp:Layout>
+            <sp:IncludeTimestamp />
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <sp:SignedSupportingTokens xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:UsernameToken sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+              <wsp:Policy>
+                <sp:WssUsernameToken10 />
+              </wsp:Policy>
+            </sp:UsernameToken>
+          </wsp:Policy>
+        </sp:SignedSupportingTokens>
+        <sp:Wss10 xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy />
+        </sp:Wss10>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="https://api.hermes-dpd.ru/WS/Imports">
+      <xsd:import schemaLocation="https://test-api.hermes-dpd.ru/WS/WebService.svc?xsd=xsd0" namespace="https://api.hermes-dpd.ru/WS/" />
+      <xsd:import schemaLocation="https://test-api.hermes-dpd.ru/WS/WebService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="https://test-api.hermes-dpd.ru/WS/WebService.svc?xsd=xsd2" />
+      <xsd:import schemaLocation="https://test-api.hermes-dpd.ru/WS/WebService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="https://test-api.hermes-dpd.ru/WS/WebService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/B2C.API.DTO" />
+      <xsd:import schemaLocation="https://test-api.hermes-dpd.ru/WS/WebService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/B2C.API" />
+      <xsd:import schemaLocation="https://test-api.hermes-dpd.ru/WS/WebService.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/System" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IWebService_CreatePreadvice_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreatePreadvice" />
+  </wsdl:message>
+  <wsdl:message name="IWebService_CreatePreadvice_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreatePreadviceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebService_UpdatePreadvice_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePreadvice" />
+  </wsdl:message>
+  <wsdl:message name="IWebService_UpdatePreadvice_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePreadviceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebService_DeletePreadvice_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeletePreadvice" />
+  </wsdl:message>
+  <wsdl:message name="IWebService_DeletePreadvice_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeletePreadviceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebService_GetPreadvices_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPreadvices" />
+  </wsdl:message>
+  <wsdl:message name="IWebService_GetPreadvices_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPreadvicesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebService_SendPreadvicesToDelivery_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendPreadvicesToDelivery" />
+  </wsdl:message>
+  <wsdl:message name="IWebService_SendPreadvicesToDelivery_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendPreadvicesToDeliveryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebService_SendAllPreadvicesToDelivery_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendAllPreadvicesToDelivery" />
+  </wsdl:message>
+  <wsdl:message name="IWebService_SendAllPreadvicesToDelivery_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendAllPreadvicesToDeliveryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebService_GetParcelShops_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetParcelShops" />
+  </wsdl:message>
+  <wsdl:message name="IWebService_GetParcelShops_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetParcelShopsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebService_GetStatusesByBusinessUnit_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetStatusesByBusinessUnit" />
+  </wsdl:message>
+  <wsdl:message name="IWebService_GetStatusesByBusinessUnit_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetStatusesByBusinessUnitResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebService_GetStatusesByParcelBarcodes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetStatusesByParcelBarcodes" />
+  </wsdl:message>
+  <wsdl:message name="IWebService_GetStatusesByParcelBarcodes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetStatusesByParcelBarcodesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWebService_GetReturnInfoByBusinessUnit_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetReturnInfoByBusinessUnit" />
+  </wsdl:message>
+  <wsdl:message name="IWebService_GetReturnInfoByBusinessUnit_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetReturnInfoByBusinessUnitResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IWebService">
+    <wsdl:operation name="CreatePreadvice">
+      <wsdl:input wsaw:Action="https://api.hermes-dpd.ru/WS/IWebService/CreatePreadvice" message="tns:IWebService_CreatePreadvice_InputMessage" />
+      <wsdl:output wsaw:Action="https://api.hermes-dpd.ru/WS/IWebService/CreatePreadviceResponse" message="tns:IWebService_CreatePreadvice_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePreadvice">
+      <wsdl:input wsaw:Action="https://api.hermes-dpd.ru/WS/IWebService/UpdatePreadvice" message="tns:IWebService_UpdatePreadvice_InputMessage" />
+      <wsdl:output wsaw:Action="https://api.hermes-dpd.ru/WS/IWebService/UpdatePreadviceResponse" message="tns:IWebService_UpdatePreadvice_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeletePreadvice">
+      <wsdl:input wsaw:Action="https://api.hermes-dpd.ru/WS/IWebService/DeletePreadvice" message="tns:IWebService_DeletePreadvice_InputMessage" />
+      <wsdl:output wsaw:Action="https://api.hermes-dpd.ru/WS/IWebService/DeletePreadviceResponse" message="tns:IWebService_DeletePreadvice_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPreadvices">
+      <wsdl:input wsaw:Action="https://api.hermes-dpd.ru/WS/IWebService/GetPreadvices" message="tns:IWebService_GetPreadvices_InputMessage" />
+      <wsdl:output wsaw:Action="https://api.hermes-dpd.ru/WS/IWebService/GetPreadvicesResponse" message="tns:IWebService_GetPreadvices_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendPreadvicesToDelivery">
+      <wsdl:input wsaw:Action="https://api.hermes-dpd.ru/WS/IWebService/SendPreadvicesToDelivery" message="tns:IWebService_SendPreadvicesToDelivery_InputMessage" />
+      <wsdl:output wsaw:Action="https://api.hermes-dpd.ru/WS/IWebService/SendPreadvicesToDeliveryResponse" message="tns:IWebService_SendPreadvicesToDelivery_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendAllPreadvicesToDelivery">
+      <wsdl:input wsaw:Action="https://api.hermes-dpd.ru/WS/IWebService/SendAllPreadvicesToDelivery" message="tns:IWebService_SendAllPreadvicesToDelivery_InputMessage" />
+      <wsdl:output wsaw:Action="https://api.hermes-dpd.ru/WS/IWebService/SendAllPreadvicesToDeliveryResponse" message="tns:IWebService_SendAllPreadvicesToDelivery_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetParcelShops">
+      <wsdl:input wsaw:Action="https://api.hermes-dpd.ru/WS/IWebService/GetParcelShops" message="tns:IWebService_GetParcelShops_InputMessage" />
+      <wsdl:output wsaw:Action="https://api.hermes-dpd.ru/WS/IWebService/GetParcelShopsResponse" message="tns:IWebService_GetParcelShops_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStatusesByBusinessUnit">
+      <wsdl:input wsaw:Action="https://api.hermes-dpd.ru/WS/IWebService/GetStatusesByBusinessUnit" message="tns:IWebService_GetStatusesByBusinessUnit_InputMessage" />
+      <wsdl:output wsaw:Action="https://api.hermes-dpd.ru/WS/IWebService/GetStatusesByBusinessUnitResponse" message="tns:IWebService_GetStatusesByBusinessUnit_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStatusesByParcelBarcodes">
+      <wsdl:input wsaw:Action="https://api.hermes-dpd.ru/WS/IWebService/GetStatusesByParcelBarcodes" message="tns:IWebService_GetStatusesByParcelBarcodes_InputMessage" />
+      <wsdl:output wsaw:Action="https://api.hermes-dpd.ru/WS/IWebService/GetStatusesByParcelBarcodesResponse" message="tns:IWebService_GetStatusesByParcelBarcodes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetReturnInfoByBusinessUnit">
+      <wsdl:input wsaw:Action="https://api.hermes-dpd.ru/WS/IWebService/GetReturnInfoByBusinessUnit" message="tns:IWebService_GetReturnInfoByBusinessUnit_InputMessage" />
+      <wsdl:output wsaw:Action="https://api.hermes-dpd.ru/WS/IWebService/GetReturnInfoByBusinessUnitResponse" message="tns:IWebService_GetReturnInfoByBusinessUnit_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IWebService" type="tns:IWebService">
+    <wsp:PolicyReference URI="#BasicHttpBinding_IWebService_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreatePreadvice">
+      <soap:operation soapAction="https://api.hermes-dpd.ru/WS/IWebService/CreatePreadvice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePreadvice">
+      <soap:operation soapAction="https://api.hermes-dpd.ru/WS/IWebService/UpdatePreadvice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeletePreadvice">
+      <soap:operation soapAction="https://api.hermes-dpd.ru/WS/IWebService/DeletePreadvice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPreadvices">
+      <soap:operation soapAction="https://api.hermes-dpd.ru/WS/IWebService/GetPreadvices" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendPreadvicesToDelivery">
+      <soap:operation soapAction="https://api.hermes-dpd.ru/WS/IWebService/SendPreadvicesToDelivery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendAllPreadvicesToDelivery">
+      <soap:operation soapAction="https://api.hermes-dpd.ru/WS/IWebService/SendAllPreadvicesToDelivery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetParcelShops">
+      <soap:operation soapAction="https://api.hermes-dpd.ru/WS/IWebService/GetParcelShops" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStatusesByBusinessUnit">
+      <soap:operation soapAction="https://api.hermes-dpd.ru/WS/IWebService/GetStatusesByBusinessUnit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStatusesByParcelBarcodes">
+      <soap:operation soapAction="https://api.hermes-dpd.ru/WS/IWebService/GetStatusesByParcelBarcodes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReturnInfoByBusinessUnit">
+      <soap:operation soapAction="https://api.hermes-dpd.ru/WS/IWebService/GetReturnInfoByBusinessUnit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+</wsdl:definitions>

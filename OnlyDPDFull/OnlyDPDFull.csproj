@@ -49,6 +49,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Connected Services\refHermesLoc\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -88,12 +93,54 @@
     <None Include="Connected Services\refDpdLoc\OnlyDPDFull.refDpdLoc.terminalStoragePeriods.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\refHermesLoc\OnlyDPDFull.refHermesLoc.ParcelShop.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\refHermesLoc\OnlyDPDFull.refHermesLoc.Preadvice.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\refHermesLoc\OnlyDPDFull.refHermesLoc.PreadviceResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\refHermesLoc\OnlyDPDFull.refHermesLoc.ReturnInfoResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\refHermesLoc\OnlyDPDFull.refHermesLoc.Status.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\refHermesLoc\OnlyDPDFull.refHermesLoc.StatusDateRangeResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\refHermesLoc\WebService.wsdl" />
+    <None Include="Connected Services\refHermesLoc\WebService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\refHermesLoc\WebService1.wsdl" />
+    <None Include="Connected Services\refHermesLoc\WebService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\refHermesLoc\WebService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\refHermesLoc\WebService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\refHermesLoc\WebService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\refHermesLoc\WebService5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\refHermesLoc\WebService6.xsd">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Connected Services\refDpdLoc\" />
+    <WCFMetadataStorage Include="Connected Services\refHermesLoc\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Connected Services\refDpdLoc\configuration91.svcinfo" />
@@ -103,6 +150,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Connected Services\refDpdLoc\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\refHermesLoc\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\refHermesLoc\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\refHermesLoc\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
